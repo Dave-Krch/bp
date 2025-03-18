@@ -15,20 +15,28 @@
 
 %\lipsum[4]
 
-V2X (Vehicle-to-everything) komunikace je důležitá technologie pro budoucnost
-dopravního průmyslu. Hlavními cíli V2X je zvýšit bezpočnost, efektivitu
+Se zvyšujícím se počtem obyvatel Země se zvyšuje i poptávka po mobilitě, což vede k nárůstu množství dopravních prostředků.
+Větší hustota dopravy sebou ale přináší nevýhody. S rostoucím počtem dopravních prostředků stoupá i množství nehod, klesá rychlost a efektivita dopravy a s tím je spojené i větší znečištění životního prostředí.
+
+Proto je důležité vyvíjet a využívat technologie, které se těmito problémy zabývají. Jednou z těchto technologií je právě V2X (Vehicle-to-everything) komunikace.
+Hlavními cíli V2X je zvýšit bezpečnost, efektivitu
 a umožnit tak udržitelný růst silničního provozu. Vedlejším, ale neméně důležitým
 cílem, je také snížení dopadu dopravy na životní prostředí, právě zvýšením
 efektivity.
-Součástí je množství standardů popisujících komunikaci mezi různými zařízenímí
-(vozidlo – vozidlo, vozdilo – zařízení infrastruktury) a různé V2X zprávy.
-Moje práce se zaměřuje hlavně na zprávy CAM [1] (Coop awarenes message)
-a DENM [2] (Decentralized enviromental message).
+
+Součástí V2X jsou různé standardy popisující komunikaci mezi několika druhy zařízení
+(vozidlo – vozidlo, vozidlo – zařízení infrastruktury) a různé V2X zprávy.
+Moje práce se zaměřuje hlavně na zprávy CAM (Coop awarenes message)
+a DENM (Decentralized enviromental message).
+
+V2X zprávy jsou kódované pomocí Abstract Syntax Notation One (ASN.1), nástroje pro kódování abstraktních datových struktur. Na překlad ASN.1 specifikací a dekódování V2X zpráv se soustředí první část mojí práce.
+
 Komunikace V2X i standardy používané pro její kódování (ASN.1) existují
 již řadu let, proto jsou již dostupné různé komerční i opensource překladače
 a dekodéry. Hlavním cílem mé práce je porovnat dostupná řešení, vybrat z nich
 nejlépe udržované a dobře použitelné projekty, hlavně ASN.1 kompilátor, a s jejich
 pomocí vytvořit aplikaci pro dekódování a vizualizaci CAM a DENM zpráv.
+
 Moje motivace pro dané téma vychází z několika důvodů. Prvním jsou použité
 technologie, s prací v prostředí .NET mám již kladné zkušenosti a chci
 se jí tak věnovat v budoucnu. Dalším důvodem je, že vyvíjená aplikace může
@@ -39,7 +47,19 @@ budoucnosti jedině růst a práce tak zůstane aktuální.
 %===============================================================================
 \chapter{Cíl práce}
 
-Cílem práce je cíl práce
+Tato bakalářská práce se dá rozdělit na několik navazujících částí.
+
+Prvním cílem mojí práce, je navrhnout architekturu v prostředí .NET, která bude vhodná pro překlad a dekódování. Architekturou je myšlena struktura a rozvržení C# tříd, které budou odpovídat zadaným ASN.1 specifikacím a budou generované kompilátorem.
+
+Dalším cílem je nalezení nebo vytvoření programu, který bude překládat ASN.1 specifikace do zdrojového kódu v jazyce C#. Psaní celého kompilátoru není záměrem práce, proto se v této části zabývám nejprve výběrem vhodného kompilátoru, schopného zpracovávat potřebné ASN.1 specifikace pro zadané V2X zprávy a poté případným dopsáním funkcí nebo jeho úpravou, tak, aby výsledný program generoval zdrojový kód v jazyce C#.
+
+Třetí část práce se zaměřuje na dekódování ASN.1 zpráv. Tato část přímo navazuje na část první, dekodér pro práci využívá zdrojový kód vygenerovaný kompilátorem.
+
+Práce se zaměřuje hlavně na zprávy ze standardů V2X, ale kompilátor i dekodér lze použít na jakékoliv specifikace, které používají stejné principy z ASN.1.
+
+Poslední cíl práce je návrh a implementace UI aplikace.
+
+
 
 
 %===============================================================================
@@ -79,8 +99,6 @@ Popsat hlavně per, možná ber a další jen zmínit?
 
 \subsection{PER}
 
-\subsection{Ostatní pravidla}
-
 %===============================================================================
 \chapter{Kompilátor}
 
@@ -89,3 +107,9 @@ Popsat hlavně per, možná ber a další jen zmínit?
 
 %===============================================================================
 \chapter{UI aplikace}
+
+%===============================================================================
+\chapter{Ekonomicko-manažerské zhodnocení}
+
+%===============================================================================
+\chapter{Závěr}
